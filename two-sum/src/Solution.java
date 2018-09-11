@@ -15,6 +15,7 @@ class Solution {
                 if (sum == target) {
                     result[0] = j;
                     result[1] = (j + i) % nums.length;
+                    return result;
                 }
             }
         }
