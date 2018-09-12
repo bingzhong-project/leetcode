@@ -9,7 +9,7 @@ class Solution:
         cache = dict()
         for i, now_str in enumerate(s):
             if now_str in cache:
-                start = cache[now_str] + 1
+                start = max(start, cache[now_str] + 1)
             cache[now_str] = i
             res = max(res, i - start + 1)
         return res
