@@ -6,20 +6,16 @@ class Solution:
         :rtype: List[List[int]]
         """
 
-        def dfs(candidates, target, candidate_sum, result, results):
-            if candidate_sum == target:
-                result = sorted(result)
-                if result not in results:
-                    results.append(result)
+        def dfs(candidates, target, start, result, results):
+            if target == 0:
+                results.append(result)
                 return
-            for i in range(len(candidates)):
+            for i in range(start, len(candidates)):
                 candidate = candidates[i]
-                if candidate_sum + candidate <= target:
-                    result.append(candidate)
-                    dfs(candidates, target, candidate_sum + candidate,
-                        result[:], results)
-                    result.pop()
+                if candidate <= target:
+                    dfs(candidates, target - candidate, i,
+                        result + [candidate], results)
 
         results = []
-        dfs(candidates, target, 0, [], results)
+        dfs(sorted(candidates), target, 0, [], results)
         return results
