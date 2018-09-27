@@ -15,7 +15,7 @@ class Solution:
             return head
         node = head
         previous_node = node
-        while node and node.next is not None:
+        while node is not None and node.next is not None:
             next_node = node.next
             after_node = next_node.next
             node.next = after_node
