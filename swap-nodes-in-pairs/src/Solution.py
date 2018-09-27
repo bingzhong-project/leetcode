@@ -15,10 +15,8 @@ class Solution:
             return head
         node = head
         previous_node = node
-        while node is not None:
+        while node and node.next is not None:
             next_node = node.next
-            if next_node is None:
-                break
             after_node = next_node.next
             node.next = after_node
             next_node.next = node
