@@ -6,13 +6,7 @@ class Solution:
         :rtype: int
         """
 
-        def find_min(
-                nums,
-                start,
-                end,
-                min_cursor=[0],
-                min_result=[2**31],
-        ):
+        def find_min(nums, start, end, min_cursor=[0], min_result=[2**31]):
             if start == end:
                 if nums[start] < min_result[0]:
                     min_cursor[0] = start
