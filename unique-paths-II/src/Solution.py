@@ -26,8 +26,3 @@ class Solution:
                         dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
 
         return dp[-1][-1]
-
-
-if __name__ == '__main__':
-    print(Solution().uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0,
-                                                                      0]]))
