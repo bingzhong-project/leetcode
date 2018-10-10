@@ -4,16 +4,15 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        result = -2**31
-        nums_len = len(nums)
-        dp = [[0 for _ in range(nums_len)] for _ in range(nums_len)]
-        for i in range(nums_len):
-            for j in range(i, nums_len):
-                if i == j:
-                    dp[i][j] = nums[i]
-                elif j - i == 1:
-                    dp[i][j] = nums[i] * nums[j]
-                else:
-                    dp[i][j] = dp[i][j - 1] * nums[j]
-                result = max(result, dp[i][j])
+        max_product = [0 for _ in range(len(nums))]
+        min_product = [0 for _ in range(len(nums))]
+        result = max_product[0] = min_product[0] = nums[0]
+        for i in range(1, len(nums)):
+            max_product[i] = max(
+                max(max_product[i - 1] * nums[i],
+                    min_product[i - 1] * nums[i]), nums[i])
+            min_product[i] = min(
+                min(max_product[i - 1] * nums[i],
+                    min_product[i - 1] * nums[i]), nums[i])
+            result = max(result, max_product[i])
         return result
