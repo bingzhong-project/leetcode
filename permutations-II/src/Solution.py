@@ -6,7 +6,7 @@ class Solution:
         """
 
         def dfs(array, visited, result, results):
-            if len(result) == len(array) and result not in results:
+            if len(result) == len(array):
                 results.append(result)
             else:
                 for i in range(len(array)):
