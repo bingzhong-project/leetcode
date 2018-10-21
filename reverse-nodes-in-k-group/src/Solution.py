@@ -14,13 +14,13 @@ class Solution:
         """
 
         def reverse(start, end):
-            cur = start.next
-            while cur.next != end:
-                next_node = cur.next
-                cur.next = next_node.next
+            last = start.next
+            while last.next != end:
+                next_node = last.next
+                last.next = next_node.next
                 next_node.next = start.next
                 start.next = next_node
-            return [start.next, cur]
+            return [start.next, last]
 
         i = 1
         new_head = None
