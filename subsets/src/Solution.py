@@ -5,8 +5,8 @@ class Solution:
         :rtype: List[List[int]]
         """
 
-        def dfs(nums, times, path, res):
-            if times == len(nums):
+        def dfs(nums, level, path, res):
+            if level == len(nums):
                 return
             for i in range(len(nums)):
                 num = nums[i]
@@ -23,7 +23,7 @@ class Solution:
                     continue
                 else:
                     res.append(path[:])
-                dfs(nums, times + 1, path, res)
+                dfs(nums, level + 1, path, res)
                 path.pop()
 
         res = []
