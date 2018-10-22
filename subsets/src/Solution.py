@@ -5,29 +5,29 @@ class Solution:
         :rtype: List[List[int]]
         """
 
-        def dfs(nums, times, result, results):
+        def dfs(nums, times, path, res):
             if times == len(nums):
                 return
             for i in range(len(nums)):
                 num = nums[i]
-                if num in result:
+                if num in path:
                     continue
-                if len(result) > 0 and num < result[-1]:
+                if len(path) > 0 and num < path[-1]:
                     continue
-                result.append(num)
-                if num < result[0]:
-                    result.pop()
+                path.append(num)
+                if num < path[0]:
+                    path.pop()
                     continue
-                if result in results:
-                    result.pop()
+                if path in res:
+                    path.pop()
                     continue
                 else:
-                    results.append(result[:])
-                dfs(nums, times + 1, result, results)
-                result.pop()
+                    res.append(path[:])
+                dfs(nums, times + 1, path, res)
+                path.pop()
 
-        results = []
-        dfs(nums, 0, [], results)
-        results.append([])
+        res = []
+        dfs(nums, 0, [], res)
+        res.append([])
 
-        return results
+        return res
