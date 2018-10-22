@@ -12,17 +12,10 @@ class Solution:
                 num = nums[i]
                 if num in path:
                     continue
-                if len(path) > 0 and num < path[-1]:
+                if len(path) > 0 and (num < path[-1] or num < path[0]):
                     continue
                 path.append(num)
-                if num < path[0]:
-                    path.pop()
-                    continue
-                if path in res:
-                    path.pop()
-                    continue
-                else:
-                    res.append(path[:])
+                res.append(path[:])
                 dfs(nums, level + 1, path, res)
                 path.pop()
 
