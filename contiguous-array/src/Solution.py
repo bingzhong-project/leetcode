@@ -4,13 +4,13 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        cumulate_sum = 0
+        cumsum = 0
         record = {0: -1}
         maxlen = 0
         for i in range(len(nums)):
-            cumulate_sum += -1 if nums[i] == 0 else 1
-            if cumulate_sum in record:
-                maxlen = max(maxlen, i - record[cumulate_sum])
+            cumsum += -1 if nums[i] == 0 else 1
+            if cumsum in record:
+                maxlen = max(maxlen, i - record[cumsum])
             else:
-                record[cumulate_sum] = i
+                record[cumsum] = i
         return maxlen
