@@ -18,7 +18,3 @@ class Solution:
                     return False
             stack.append(p)
         return len(stack) == 0
-
-
-if __name__ == '__main__':
-    print(Solution().isValid("(]]"))
