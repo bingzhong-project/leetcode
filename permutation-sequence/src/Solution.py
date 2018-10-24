@@ -5,7 +5,7 @@ class Solution:
         :type k: int
         :rtype: str
         """
-
+        # 该解法超时
         def calculate(n):
             if n <= 2:
                 return n
