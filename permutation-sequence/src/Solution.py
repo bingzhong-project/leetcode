@@ -5,30 +5,30 @@ class Solution:
         :type k: int
         :rtype: str
         """
-        # 该解法超时
-        def calculate(n):
-            if n <= 2:
-                return n
-            return n * calculate(n - 1)
+        node_nums = [1 for i in range(n)]
+        for i in range(1, n):
+            node_nums[i] = i * node_nums[i - 1]
+        node_nums.sort(reverse=True)
 
-        node_count = int(calculate(n) / n)
-        div = k // node_count
-        mod = k % node_count
-        if mod == 0:
-            node_num = div
-        else:
-            node_num = div + 1
-
-        def dfs(nums, level, visited, path, res):
-            if len(path) == len(nums):
+        def dfs(nums, n, level, k, path, res):
+            if len(path) == n:
                 res.append(path)
+                return
+            node_count = node_nums[level]
+            div = k // node_count
+            mod = k % node_count
+            if mod == 0:
+                node_num = div
+            else:
+                node_num = div + 1
             for i in range(len(nums)):
-                if level == 0 and i != node_num - 1:
+                if i != node_num - 1:
                     continue
-                if i not in visited:
-                    dfs(nums, level + 1, visited + [i], path + str(nums[i]),
-                        res)
+                tmp = nums[:]
+                del tmp[i]
+                dfs(tmp, n, level + 1, k - node_count * (node_num - 1),
+                    path + str(nums[i]), res)
 
         res = []
-        dfs([i for i in range(1, n + 1)], 0, [], "", res)
-        return res[k - 1 - node_count * (node_num - 1)]
+        dfs([i for i in range(1, n + 1)], n, 0, k, "", res)
+        return res[-1]
