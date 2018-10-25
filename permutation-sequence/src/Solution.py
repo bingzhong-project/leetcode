@@ -10,11 +10,11 @@ class Solution:
             node_nums[i] = i * node_nums[i - 1]
         node_nums.sort(reverse=True)
 
-        def dfs(nums, level, n, k, path, res):
+        def dfs(nums, height, n, k, path, res):
             if len(path) == n:
                 res.append(path)
                 return
-            node_count = node_nums[level]
+            node_count = node_nums[height]
             div = k // node_count
             mod = k % node_count
             if mod == 0:
@@ -26,7 +26,7 @@ class Solution:
                     continue
                 tmp = nums[:]
                 del tmp[i]
-                dfs(tmp, level + 1, n, k - node_count * (node_num - 1),
+                dfs(tmp, height + 1, n, k - node_count * (node_num - 1),
                     path + str(nums[i]), res)
 
         res = []
