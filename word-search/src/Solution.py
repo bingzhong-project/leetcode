@@ -8,7 +8,8 @@ class Solution:
 
         def dfs(m, n, index, board, word, path=""):
             if m < 0 or n < 0 or m >= len(board) or n >= len(
-                    board[0]) or board[m][n] != word[index]:
+                    board[0]) or index == len(
+                        word) or board[m][n] != word[index]:
                 return False
             path += board[m][n]
             if len(word) == len(path):
