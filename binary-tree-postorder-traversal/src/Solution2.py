@@ -25,9 +25,9 @@ class Solution:
                 res.append(stack.pop().val)
                 pre = cur
             else:
-                if cur.left is not None:
-                    stack.append(cur.left)
                 if cur.right is not None:
                     stack.append(cur.right)
+                if cur.left is not None:
+                    stack.append(cur.left)
 
         return res
