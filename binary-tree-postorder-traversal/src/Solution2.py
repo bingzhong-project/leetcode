@@ -14,20 +14,20 @@ class Solution:
         """
         res = []
         stack = []
-        cur = root
-        pre = None
+        node = root
+        pre_node = None
         if root is not None:
             stack.append(root)
         while len(stack) > 0:
-            cur = stack[-1]
-            if (cur.left is None and cur.right is None) or (
-                    pre is not None and (pre == cur.left or pre == cur.right)):
+            node = stack[-1]
+            if (node.left is None and node.right is None) or (
+                    pre_node is not None and (pre_node == node.left or pre_node == node.right)):
                 res.append(stack.pop().val)
-                pre = cur
+                pre_node = node
             else:
-                if cur.right is not None:
-                    stack.append(cur.right)
-                if cur.left is not None:
-                    stack.append(cur.left)
+                if node.right is not None:
+                    stack.append(node.right)
+                if node.left is not None:
+                    stack.append(node.left)
 
         return res
