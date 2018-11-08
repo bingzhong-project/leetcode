@@ -14,14 +14,14 @@ class Solution:
         """
         res = []
         stack = []
-        node = root
         pre_node = None
         if root is not None:
             stack.append(root)
         while len(stack) > 0:
             node = stack[-1]
             if (node.left is None and node.right is None) or (
-                    pre_node is not None and (pre_node == node.left or pre_node == node.right)):
+                    pre_node is not None and
+                (pre_node == node.left or pre_node == node.right)):
                 res.append(stack.pop().val)
                 pre_node = node
             else:
