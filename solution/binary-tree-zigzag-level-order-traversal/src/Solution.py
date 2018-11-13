@@ -7,7 +7,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrder(self, root):
+    def zigzagLevelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
@@ -18,6 +18,7 @@ class Solution:
         cache = []
         if root is not None:
             queue.append(root)
+        level = 1
         while len(queue) > 0:
             node = queue.pop(0)
             cache.append(node.val)
@@ -28,6 +29,9 @@ class Solution:
             if node == last:
                 if len(queue) > 0:
                     last = queue[-1]
+                if level % 2 == 0:
+                    cache.reverse()
                 res.append(cache)
+                level += 1
                 cache = []
         return res
