@@ -26,7 +26,3 @@ class Solution:
         result = [-1, -1]
         search(nums, target, 0, len(nums) - 1, result)
         return result
-
-
-if __name__ == '__main__':
-    print(Solution().searchRange(nums=[5, 7, 7, 8, 8, 10], target=8))
