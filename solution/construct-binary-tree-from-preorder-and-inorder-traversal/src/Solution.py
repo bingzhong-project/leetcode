@@ -14,7 +14,7 @@ class Solution:
         :rtype: TreeNode
         """
 
-        def dfs(preorder, inorder):
+        def construct(preorder, inorder):
             if len(preorder) == 0:
                 return None
             val = preorder[0]
@@ -24,8 +24,8 @@ class Solution:
             else:
                 preorder.pop(0)
             index = inorder.index(val)
-            root.left = dfs(preorder, inorder[:index])
-            root.right = dfs(preorder, inorder[index + 1:])
+            root.left = construct(preorder, inorder[:index])
+            root.right = construct(preorder, inorder[index + 1:])
             return root
 
-        return dfs(preorder, inorder)
+        return construct(preorder, inorder)
