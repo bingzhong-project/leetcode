@@ -18,12 +18,12 @@ class Solution:
             if len(preorder) == 0:
                 return None
             val = preorder[0]
-            root = TreeNode(val)
             if val not in inorder:
                 return None
             else:
                 preorder.pop(0)
             index = inorder.index(val)
+            root = TreeNode(val)
             root.left = construct(preorder, inorder[:index])
             root.right = construct(preorder, inorder[index + 1:])
             return root
