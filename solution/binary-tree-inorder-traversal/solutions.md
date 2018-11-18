@@ -1,4 +1,4 @@
-> Binary Tree Inorder Traversal 解题思路
+> Binary Tree Inorder Traversal
 
 # 知识点
 树的中序遍历，栈

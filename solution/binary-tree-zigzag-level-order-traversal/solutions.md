@@ -1,4 +1,4 @@
-> Binary Tree Zigzag Level Order Traversal 解题思路
+> Binary Tree Zigzag Level Order Traversal
 
 # 知识点
 广度优先搜索，栈

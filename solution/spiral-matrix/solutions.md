@@ -1,4 +1,4 @@
-> Spiral Matrix 解题思路
+> Spiral Matrix
 
 # 知识点
 二维数组的遍历

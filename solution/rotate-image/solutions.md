@@ -1,4 +1,4 @@
-> Rotate Image 解题思路
+> Rotate Image
 
 # 知识点
 二维数组遍历

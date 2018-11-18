@@ -1,4 +1,4 @@
-> Construct Binary Tree from Inorder and Postorder Traversal 解题思路
+> Construct Binary Tree from Inorder and Postorder Traversal
 
 # 知识点
 中序遍历，后序遍历

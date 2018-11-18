@@ -1,4 +1,4 @@
-> Remove Duplicates from Sorted List II 解题思路
+> Remove Duplicates from Sorted List II
 
 # 知识点
 链表

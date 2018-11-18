@@ -1,4 +1,4 @@
-> Partition List 解题思路
+> Partition List
 
 # 知识点
 链表，指针

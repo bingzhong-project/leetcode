@@ -1,4 +1,4 @@
-> Combinations 解题思路
+> Combinations
 
 # 知识点
 回溯

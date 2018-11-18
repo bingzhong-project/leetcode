@@ -1,4 +1,4 @@
-> Unique Binary Search Trees II 解题思路
+> Unique Binary Search Trees II
 
 # 知识点
 动态规划，二叉查找树

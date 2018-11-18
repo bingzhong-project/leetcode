@@ -1,4 +1,4 @@
-> Word Search 解题思路
+> Word Search
 
 # 知识点
 回溯
