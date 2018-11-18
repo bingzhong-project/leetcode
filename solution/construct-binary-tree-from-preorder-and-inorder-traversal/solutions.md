@@ -1,4 +1,4 @@
-> Construct Binary Tree from Preorder and Inorder Traversal
+> [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
 
 # 知识点
 先序遍历，中序遍历
