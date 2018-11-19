@@ -1,4 +1,4 @@
-> Permutation Sequence 解题思路
+> [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
 
 # 知识点
 回溯

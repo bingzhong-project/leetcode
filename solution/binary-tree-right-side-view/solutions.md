@@ -1,11 +1,11 @@
-> Binary Tree Right Side View 解题思路
+> [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/description/)
 
 # 知识点
 广度优先搜索，深度优先搜索 。
 
 解决该题有两种思路，这里选用广度优先搜索。
 
-# 思路
+# 解题思路
 简单来说，该题需要解决的是求出树的每一层的最靠右边的节点，换句话说求出每一层的最后一个节点。  
 想要求出每一层的最后一个节点，遍历树是必须的。遍历树的话常见就是广度优先搜索（层级遍历）和深度优先搜索（先序遍历），这里选用广度优先搜索。  
 

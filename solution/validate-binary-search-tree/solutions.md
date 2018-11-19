@@ -1,4 +1,4 @@
-> Validate Binary Search Tree 解题思路
+> [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/description/)
 
 # 知识点
 深度优先搜索，二叉查找树

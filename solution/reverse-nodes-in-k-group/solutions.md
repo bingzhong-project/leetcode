@@ -1,9 +1,9 @@
-> Reverse Nodes in k-Group 解题思路
+> [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/)
 
 # 知识点
 反转单链表
 
-# 思路
+# 解题思路
 解题思路为分解链表，然后局部反转链表。  
 反转链表的做法为，设置一个 dummy 节点，即假节点，永远指向链表的首节点，还有一个 last 指针，一直指向未进行反转前的链表的首节点，因为原先链表的首节点将会变成末尾节点。以而下链表为例。  
 ```

@@ -1,4 +1,4 @@
-> Combinations 解题思路
+> [Combinations](https://leetcode.com/problems/combinations/description/)
 
 # 知识点
 回溯
