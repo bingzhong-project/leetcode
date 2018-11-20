@@ -6,13 +6,14 @@ class Solution:
         """
         if len(nums) == 0:
             return 0
-        max_steal = [0 for _ in range(len(nums))]
-        max_not_steal = [0 for _ in range(len(nums))]
+        max_steal = 0
+        max_not_steal = 0
         for i in range(len(nums)):
             if i == 0:
-                max_steal[i] = nums[i]
-                max_not_steal[i] = 0
+                max_steal = nums[i]
+                max_not_steal = 0
             else:
-                max_steal[i] = max_not_steal[i - 1] + nums[i]
-                max_not_steal[i] = max(max_steal[i - 1], max_not_steal[i - 1])
-        return max(max_steal[-1], max_not_steal[-1])
+                temp = max_steal
+                max_steal = max_not_steal + nums[i]
+                max_not_steal = max(temp, max_not_steal)
+        return max(max_steal, max_not_steal)
