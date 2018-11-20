@@ -10,10 +10,9 @@ class Solution:
         res = -2**31
         max_cache = 0
         for i in range(len(nums)):
-            num = nums[i]
             if i == 0:
-                max_cache = num
+                max_cache = nums[i]
             else:
-                max_cache = max(max_cache + num, num)
+                max_cache = max(max_cache + nums[i], nums[i])
             res = max(res, max_cache)
         return res
