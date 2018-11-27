@@ -16,4 +16,4 @@ dp[i] = max(dp[i], dp[n] + 1) if nums[i] % nums[n] == 0
 但是这样的话空间复杂度为 O(n<sup>2</sup>) 。  
 
 ## 思路 2
-思路 2 的 dp 用于存储最大子集合的长度，而为了能够最长子集合的元素，用一个 subset_indices 数组保存整除子集合的索引序列。用 max_index 记录最长整除子集合的元素索引，之后通过遍历 subset_indices 和利用 max_index 将相关的元素收集起来即可。
+思路 2 的 dp 用于存储最大子集合的长度，而为了能够最长子集合的元素，用一个 subset_indices 数组保存整除子集合的索引序列，例如 subset_indices[i] 存储的是其在最大子集合的前一个元素的索引值。用 max_index 记录最长整除子集合的元素索引，之后通过遍历 subset_indices 和利用 max_index 将相关的元素收集起来即可。
