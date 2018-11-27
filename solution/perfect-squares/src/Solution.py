@@ -7,15 +7,11 @@ class Solution:
         :rtype: int
         """
         dp = [2**31 for _ in range(n + 1)]
-        squares = list()
-        for i in range(1, n + 1):
-            squares.append(i * i)
-            if i in squares:
-                dp[i] = 1
-            else:
-                for s in squares:
-                    if s > i:
-                        break
-                    dp[i] = min(dp[i], dp[s] + dp[i - s], dp[i - 1] + 1)
-
+        dp[0] = 0
+        dp[1] = 1
+        for i in range(2, n + 1):
+            j = 1
+            while j * j <= i:
+                dp[i] = min(dp[i], dp[i - j * j] + 1)
+                j += 1
         return dp[-1]
