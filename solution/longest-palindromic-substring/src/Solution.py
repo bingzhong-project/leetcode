@@ -4,7 +4,7 @@ class Solution:
         :type s: str
         :rtype: str
         """
-        dp = [[False for i in range(len(s))] for i in range(len(s))]
+        dp = [[False for _ in range(len(s))] for _ in range(len(s))]
         ri = 0
         rj = 0
         rdiff = 0
