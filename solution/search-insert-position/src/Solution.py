@@ -8,16 +8,16 @@ class Solution:
 
         def binary(left, right, nums, target):
             if right - left == 1 or left == right:
+                if target < nums[right] and target > nums[left]:
+                    return left + 1
                 if target > nums[right]:
                     return right + 1
-                if target == nums[left]:
-                    return left
-                if target == nums[right]:
-                    return right
                 if target < nums[left]:
                     return left - 1
-                if target > nums[left]:
-                    return left + 1
+                if target == nums[right]:
+                    return right
+                if target == nums[left]:
+                    return left
             mid = (left + right) // 2
             if nums[mid] > target:
                 return binary(left, mid, nums, target)
