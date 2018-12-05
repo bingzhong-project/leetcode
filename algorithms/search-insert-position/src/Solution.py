@@ -7,22 +7,13 @@ class Solution:
         """
 
         def binary(left, right, nums, target):
-            if right - left == 1 or left == right:
-                if target < nums[right] and target > nums[left]:
-                    return left + 1
-                if target > nums[right]:
-                    return right + 1
-                if target < nums[left]:
-                    return left - 1
-                if target == nums[right]:
-                    return right
-                if target == nums[left]:
-                    return left
+            if left >= right:
+                return left + 1 if target > nums[left] else left
             mid = (left + right) // 2
             if nums[mid] > target:
-                return binary(left, mid, nums, target)
+                return binary(left, mid - 1, nums, target)
             elif nums[mid] < target:
-                return binary(mid, right, nums, target)
+                return binary(mid + 1, right, nums, target)
             else:
                 return mid
 
