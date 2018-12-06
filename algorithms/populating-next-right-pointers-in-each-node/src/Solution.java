@@ -1,7 +1,7 @@
 /**
  * Definition for binary tree with next pointer.
  */
-public static class TreeLinkNode {
+public class TreeLinkNode {
     int val;
     TreeLinkNode left, right, next;
 
