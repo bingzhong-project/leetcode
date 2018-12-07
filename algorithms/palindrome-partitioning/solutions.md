@@ -9,8 +9,8 @@
          S
       /  |  \
     a   aa  aab
-   /    /
-  a    b 
+   / \   |
+  a  ab  b 
  / 
 b
 ```
