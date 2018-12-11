@@ -13,21 +13,17 @@ class Solution:
         """
         dummy = ListNode(-1)
         dummy.next = head
+        prev = dummy
         node = head
-        pre = dummy
-        while node is not None:
-            insert_point = dummy
+        while node is not None and node.next is not None:
+            val = node.next.val
+            if node.val < val:
+                node = node.next
+                continue
+            if prev.next.val > val:
+                prev = dummy
+            while prev.next.val < val:
+                prev = prev.next
             next_node = node.next
-            while True:
-                if insert_point.next == node:
-                    pre = node
-                    break
-                if insert_point.next.val > node.val:
-                    next_insert_point = insert_point.next
-                    insert_point.next = node
-                    node.next = next_insert_point
-                    pre.next = next_node
-                    break
-                insert_point = insert_point.next
-            node = next_node
+            node.next, next_node.next, prev.next = next_node.next, prev.next, next_node
         return dummy.next
