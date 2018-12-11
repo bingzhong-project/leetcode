@@ -13,17 +13,17 @@ class Solution:
         """
         dummy = ListNode(-1)
         dummy.next = head
-        prev = dummy
-        cur = head
-        while cur is not None and cur.next is not None:
-            val = cur.next.val
-            if cur.val < val:
-                cur = cur.next
+        insert = dummy
+        sort_tail = head
+        while sort_tail is not None and sort_tail.next is not None:
+            val = sort_tail.next.val
+            if sort_tail.val < val:
+                sort_tail = sort_tail.next
                 continue
-            if prev.next.val > val:
-                prev = dummy
-            while prev.next.val < val:
-                prev = prev.next
-            next_node = cur.next
-            cur.next, next_node.next, prev.next = next_node.next, prev.next, next_node
+            if insert.next.val > val:
+                insert = dummy
+            while insert.next.val < val:
+                insert = insert.next
+            next_node = sort_tail.next
+            sort_tail.next, next_node.next, insert.next = next_node.next, insert.next, next_node
         return dummy.next
