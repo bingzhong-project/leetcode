@@ -14,16 +14,16 @@ class Solution:
         dummy = ListNode(-1)
         dummy.next = head
         prev = dummy
-        node = head
-        while node is not None and node.next is not None:
-            val = node.next.val
-            if node.val < val:
-                node = node.next
+        cur = head
+        while cur is not None and cur.next is not None:
+            val = cur.next.val
+            if cur.val < val:
+                cur = cur.next
                 continue
             if prev.next.val > val:
                 prev = dummy
             while prev.next.val < val:
                 prev = prev.next
-            next_node = node.next
-            node.next, next_node.next, prev.next = next_node.next, prev.next, next_node
+            next_node = cur.next
+            cur.next, next_node.next, prev.next = next_node.next, prev.next, next_node
         return dummy.next
