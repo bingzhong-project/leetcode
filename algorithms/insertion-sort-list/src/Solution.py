@@ -27,4 +27,3 @@ class Solution:
             next_node = node.next
             node.next, next_node.next, prev.next = next_node.next, prev.next, next_node
         return dummy.next
-
