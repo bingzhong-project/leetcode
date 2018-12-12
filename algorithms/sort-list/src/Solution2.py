@@ -47,5 +47,6 @@ class Solution:
                     dummy.next, j.next, j = j, dummy_next, j_next
             sort(head, middle_node)
             sort(middle_node.next, None)
+
         sort(head)
         return head
