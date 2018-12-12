@@ -8,6 +8,8 @@ class ListNode:
 class Solution:
     def sortList(self, head):
         """
+        归并排序
+
         :type head: ListNode
         :rtype: ListNode
         """
