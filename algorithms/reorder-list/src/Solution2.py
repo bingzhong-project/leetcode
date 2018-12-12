@@ -15,12 +15,12 @@ class Solution:
         def middle(node):
             slow = node
             fast = node
-            pre = slow
+            prev = slow
             while fast is not None and fast.next is not None:
-                pre = slow
+                prev = slow
                 slow = slow.next
                 fast = fast.next.next
-            return pre
+            return prev
 
         def reverse(node):
             dummy = ListNode(-1)
