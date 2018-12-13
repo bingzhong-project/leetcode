@@ -14,53 +14,22 @@ class Solution:
         :rtype: ListNode
         """
 
-        def middle(node):
+        def middle(node, tail):
             slow = node
             fast = node
-            prev = slow
-            while fast is not None and fast.next is not None:
-                prev = slow
+            while fast != tail and fast.next != tail:
                 slow = slow.next
                 fast = fast.next.next
-            return prev
+            return slow
+
+        def swap(node1, prev_node1, node2, prev_node2):
+            prev_node1.next, prev_node2.next = node2, node1
+            node1.next, node2.next = node2.next, node1.next
 
         def sort(head, tail):
-            if head is None or head.next is None:
+            if head == tail:
                 return
-            dummy = ListNode(None)
-            dummy.next = head
-            middle_node = middle(head)
-
-            i = dummy.next
-            while i != middle_node:
-                i_next = i.next
-                if i.val > middle_node.val:
-                    middle_node_next = middle_node.next
-                    i_next = i.next
-                    middle_node.next, i.next = i, middle_node_next
-                i = i_next
-
-            j = middle_node.next
-            while j is not None and j.next != tail:
-                j_next = j.next
-                if j.val < middle_node.val:
-                    dummy_next = dummy.next
-                    j_next = j.next
-                    dummy.next, j.next = j, dummy_next
-                j = j_next
-            sort(dummy.next, middle_node)
-            sort(middle_node.next, None)
+            pass
 
         sort(head, None)
         return head
-
-
-# if __name__ == '__main__':
-#     node1 = ListNode(1)
-#     node2 = ListNode(2)
-#     node3 = ListNode(3)
-#     node4 = ListNode(4)
-#     node4.next = node2
-#     node2.next = node1
-#     node1.next = node3
-#     Solution().sortList(node4)
