@@ -14,7 +14,7 @@ class Solution:
         :rtype: ListNode
         """
 
-        def swap(node1, node2):
+        def swap_val(node1, node2):
             tmp = node1.val
             node1.val = node2.val
             node2.val = tmp
@@ -23,24 +23,18 @@ class Solution:
             if head == tail or head.next is None:
                 return
             val = head.val
-            switch = head
-            i = head.next
-            while i != tail:
-                if i.val < val:
-                    switch = switch.next
-                    if switch != i:
-                        swap(i, switch)
+            swap = head
+            current = swap.next
+            while current != tail:
+                if current.val < val:
+                    swap = swap.next
+                    if swap != current:
+                        swap_val(current, swap)
+                current = current.next
+            if head != current:
+                swap_val(head, swap)
+            sort(head, swap)
+            sort(swap.next, tail)
 
         sort(head, None)
         return head
-
-
-if __name__ == '__main__':
-    node1 = ListNode(1)
-    node2 = ListNode(2)
-    node3 = ListNode(3)
-    node4 = ListNode(4)
-    node4.next = node2
-    node2.next = node1
-    node1.next = node3
-    Solution().sortList(node4)
