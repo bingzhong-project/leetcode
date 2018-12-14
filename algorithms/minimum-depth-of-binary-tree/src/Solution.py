@@ -14,7 +14,7 @@ class Solution:
         """
         if root is None:
             return 0
-        level = 0
+        level = 1
         queue = list()
         queue.append(root)
         last = root
