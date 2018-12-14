@@ -1,9 +1,13 @@
-> [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
+# Minimum Number of Arrows to Burst Balloons
 
-# 知识点
+[问题描述](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
+
+## 知识点
+
 贪心算法
 
-# 解题思路
+## 解题思路
+
 本题使用贪心算法进行解答。贪心算法即选用局部最优解，各个局部最优解组合成全局最优解。  
 首先对给出的气球进行排序，排序完成后，坐标 X<sub>1</sub> 小的气球将排到前面， X<sub>1</sub> 相等即比较 X<sub>2</sub> 。排序后再对气球进行遍历，可以保证气球的坐标顺序增加。  
 每一箭都追求尽量射到足够多的气球，所以在瞄准时，优先选择气球的 X<sub>2</sub> 坐标，将该位置标记为瞄准点，然后查看下一个气球，如果该气球的起始坐标小于瞄准点，即这个气球也能被击中，这时比较该气球的 X<sub>2</sub> 坐标与瞄准点，如果 X<sub>2</sub> 坐标小于瞄准点，即当前瞄准的坐标无法击中气球，所以瞄准点更改为 X<sub>2</sub> ，这样既能击中上一个气球，也能击中当前气球，否则瞄准点不做改变。  

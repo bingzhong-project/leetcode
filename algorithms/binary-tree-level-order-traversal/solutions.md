@@ -1,9 +1,13 @@
-> [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
+# Binary Tree Level Order Traversal
 
-# 知识点
+[问题描述](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
+
+## 知识点
+
 广度优先搜索
 
-# 解题思路
+## 解题思路
+
 解题的重点在于如何找到树每一层的最后一个节点。  
 广度优先遍历借助队列来完成，每次节点出队后，再将该节点的子节点添加到队列中。根据广度优先搜索的处理方式，如果当队列中的节点都是同一层的，那么该层的最后一个节点处于队尾。而当队列中存放的都是同一层节点时，表明最近一个出队的是上一层的最后一个节点。  
 根据上面提到的广度优先搜索特性，可以声明一个 last 指针，指向每一层的最后一个节点。开始时，最后一个节点就是根节点，所以 last 指针首先指向的时根节点。而随着广度优先搜索的进行，每当节点出队时，都判断一下是否为 last 指针指向的节点，如果是则表明某一层的最后一个节点已经出队，队列里剩下的节点都是同一层的，将 last 指针指向队尾节点。  

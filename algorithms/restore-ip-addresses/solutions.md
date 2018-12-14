@@ -1,11 +1,16 @@
-> [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
+# Restore IP Addresses
 
-# 知识点
+[问题描述](https://leetcode.com/problems/restore-ip-addresses/description/)
+
+## 知识点
+
 回溯算法
 
-# 解题思路
+## 解题思路
+
 该题为组合题，从给定的字符串中组合出相应的 IP 地址字符串，每个 IP 子串的组成可以是 1 个字符，也可以是 2、3 个。所以使用回溯算法作为解题思路，而回溯的判断就在于是否为合法 IP 地址。  
 本题的难点在于组合的位数不同，则每个节点的值的长度不一。有指定字符串 “25525511135” 第一层循环时，形成的树如下：
+
 ```
     Nil
   /  |  \

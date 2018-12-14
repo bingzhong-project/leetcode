@@ -1,10 +1,12 @@
-> [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)
+# Insertion Sort List
 
-# 知识点
+[问题描述](https://leetcode.com/problems/insertion-sort-list/)
+
+## 知识点
 
 插入排序
 
-# 解题思路
+## 解题思路
 
 插入排序的基本思路为先排序好第 1 .. n 的元素，然后第 n + 1 位的元素与前面已排好序的子列表元素，找到合适的位置插入。  
 由于单链表的特性，只能进行顺序遍历，所以第 n + 1 位元素在与前面已经排好序子链表时，只能从头到尾的比较。  

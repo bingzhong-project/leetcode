@@ -1,15 +1,21 @@
-> [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+# Longest Palindromic Substring
 
-# 知识点
+[问题描述](https://leetcode.com/problems/longest-palindromic-substring/)
+
+## 知识点
+
 动态规划，回文字
 
-# 解题思路
+## 解题思路
+
 对于一个字符串是否为回文字，有以下判断方式：
+
 1. 字符串为单个字符为回文字
 2. 字符串为两个字符时，如果两个字符相等，则为回文字
 3. 当字符串的字符数大于 2 时，如果首尾两个字符为相同字符，且收尾之间的字符子串 str[1:len(s) - 1] 为回文字，则字符串为回文字。
 
 根据上述回文字的判断思路，声明一个二维数组 dp ，dp[i][j] 为字符串第 i 位字符到第 j 位字符的字符子串 str[i:j + 1]是否为回文字。有以下状态转移方程：
+
 ```
            true if i == j
 dp[i][j] = str[i] == str[j] if i + 1 = j

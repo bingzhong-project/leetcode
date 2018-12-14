@@ -1,12 +1,17 @@
-> [Flatten Binary Tree To Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)
+# Flatten Binary Tree To Linked List
 
-# 知识点
+[问题描述](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)
+
+## 知识点
+
 树，深度优先搜索
 
-# 解题思路
+## 解题思路
+
 根据题目要求，是将树转换为以先序遍历为顺序的链表。根据这个转换规律，可以通过以下步骤完成。  
 利用后序遍历，从子节点开始处理。对于每个节点，将其左子节点成为其父节点的右节点，将原先的右节点成为该父子节点的最后一个右子节点。当整个后序遍历完成，树就会成功转化为链表。因为后序遍历的遍历顺序，总是会先处理子节点然后才会处理父节点，自下而上的完成整个转换过程，不会重复处理已经处理过的节点。  
 以下为简单的转化过程：
+
 ```
     1
    / \
@@ -14,15 +19,17 @@
  / \   \
 3   4   6
 ```
+
 ```
     1
    / \
   2   5
-   \   \   
+   \   \
     3   6
      \
-      4   
+      4
 ```
+
 ```
 1
  \

@@ -1,22 +1,30 @@
-> [Triangle](https://leetcode.com/problems/triangle/description/)
+# Triangle
 
-# 知识点
+[问题描述](https://leetcode.com/problems/triangle/description/)
+
+## 知识点
+
 动态规划
 
-# 解题思路
+## 解题思路
+
 使用动态规划进行解题，解题思路有两种。
 
-## 思路 1
+### 思路 1
+
 利用动态规划自底向上的解决问题。对于每个节点来说，如果节点前的路径和为最小值，加上当前节点，也就成为最小路径和。  
 设有 total[i][j] 表示从顶点开始出发，到达 triangle[i][j] 节点的总和。total[i][j] 等于当前节点，即 triangle[i][j] 加上上一层的最小值。
+
 ```
               triangle[i][j] + total[i - 1][j]  if j == len(triangle[i]) - 1
-total[i][j] = 
-              triangle[i][j] + min(total[i - 1][j], total[i - 1][j - 1]) if j < len(triangle[i]) - 1 
+total[i][j] =
+              triangle[i][j] + min(total[i - 1][j], total[i - 1][j - 1]) if j < len(triangle[i]) - 1
 ```
+
 通过上面的公式，就可以获取到各个路径的和，从而找出最小值的路径和。
 
-## 思路 2
+### 思路 2
+
 思路 1 需要 O(N<sup>2</sup>) 的空间，而最好的是可以利用 O(N) 空间完成。  
 从思路 1 种可以发现，其实每次求取路径和时，行数，即 i ，它的表达式总是不变的，即行数的变化并不时必要的。  
 可以声明一个一维数组 total ，用于存放当前所在行的节点的路径和。每次到达新的行，新的路径和将会覆盖之前的。  

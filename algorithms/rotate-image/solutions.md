@@ -1,10 +1,15 @@
-> [Rotate Image](https://leetcode.com/problems/rotate-image/description/)
+# Rotate Image
 
-# 知识点
+[问题描述](https://leetcode.com/problems/rotate-image/description/)
+
+## 知识点
+
 二维数组遍历
 
-# 解题思路
+## 解题思路
+
 设有二维数组 matrix ：
+
 ```
 [
   [ 5, 1, 9,11],
@@ -15,6 +20,7 @@
 ```
 
 将二维数组进行顺时针旋转 90 度将是：
+
 ```
 [
   [15,13, 2, 5],
@@ -25,7 +31,8 @@
 ```
 
 数组旋转前后，元素位置的交换步骤如下：
-1. 上下数组互换，直到遇到中线。即 matrix[0] 和 matrix[3] 互换位置，然后 matrix[1] 和 matrix[2] 互换位置。  
+
+1. 上下数组互换，直到遇到中线。即 matrix[0] 和 matrix[3] 互换位置，然后 matrix[1] 和 matrix[2] 互换位置。
 2. 上下数组交换后，斜线上的元素也进行互换，交换的规律为 matrix[i][j] 与 matrix[j][i] 元素互换。
 
 在第 2 步，即互换元素位置阶段，一般使用两层循环，遍历整个二维数组（将行和列分别设为 i 和 j ）， 为了防止已经互换的元素再次发生互换，需要添加一个判断，即只有 i < j 的情况下才发生互换，这样就可以避免二次互换的发生。
