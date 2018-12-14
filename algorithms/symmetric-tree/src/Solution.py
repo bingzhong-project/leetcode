@@ -48,6 +48,5 @@ class Solution:
                 else:
                     res = False
                     break
-                if len(queue) > 0:
-                    last = queue[-1]
+                last = queue[-1] if len(queue) > 0 else None
         return res
