@@ -16,7 +16,7 @@
 
 根据上述回文字的判断思路，声明一个二维数组 dp ，dp[i][j] 为字符串第 i 位字符到第 j 位字符的字符子串 str[i:j + 1]是否为回文字。有以下状态转移方程：
 
-```
+```text
            true if i == j
 dp[i][j] = str[i] == str[j] if i + 1 = j
            str[i] == str[j] and dp[i + 1][j - 1] if j - i > 2

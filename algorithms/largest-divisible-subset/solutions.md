@@ -10,7 +10,7 @@
 
 首先要了解整除的一个特性，如果 C 能被 B 整除 dp[i] 表示第 i 位元素的最长整除子集合的长度。对于第 i 位元素来说，有第 n 位元素（ n < i），nums[i] 能被 nums[n] 整除，那么 dp[i] 就有可能为 dp[n] + 1，如果 dp[n] + 1 大于 dp[i] 的话。
 
-```
+```text
 dp[i] = max(dp[i], dp[n] + 1) if nums[i] % nums[n] == 0
 ```
 
