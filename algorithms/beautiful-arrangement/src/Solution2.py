@@ -5,17 +5,17 @@ class Solution:
         :rtype: int
         """
 
-        def dfs(pos, numbers, cache={}):
-            if pos == 1:
+        def dfs(i, numbers, dp={}):
+            if len(numbers) == 1:
                 return 1
-            key = (pos, numbers)
-            if key in cache:
-                return cache[key]
+            key = (i, numbers)
+            if key in dp:
+                return dp[key]
             total = 0
-            for i, number in enumerate(numbers):
-                if number % pos == 0 or pos % number == 0:
-                    total += dfs(pos - 1, numbers[:i] + numbers[i + 1:], cache)
-            cache[(pos, numbers)] = total
+            for j, number in enumerate(numbers):
+                if number % i == 0 or i % number == 0:
+                    total += dfs(i - 1, numbers[:j] + numbers[j + 1:], dp)
+            dp[(i, numbers)] = total
             return total
 
         return dfs(N, tuple([i for i in range(1, N + 1)]))
