@@ -18,12 +18,12 @@ class Solution:
         if len(digits) == 0:
             return []
         result = list(phone_dict[digits[0]])
-        for i in range(1, len(digits)):
+        for i in range(len(digits)):
             cache = list()
             letters = phone_dict[digits[i]]
             if len(letters) > 0:
                 for letter in letters:
-                    for i in range(len(result)):
-                        cache.append(result[i] + letter)
+                    for j in range(len(result)):
+                        cache.append(result[j] + letter)
                 result = cache
         return result
