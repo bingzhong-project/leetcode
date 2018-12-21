@@ -12,7 +12,7 @@
 
 ### 解法 1
 
-解法 1 使用广度优先搜索进行求解，在 [Binary Tree Level Order Traversal 解题思路](https://gitee.com/bingzhong-project/leetcode/blob/master/solution/binary-tree-level-order-traversal/solutions.md) 的基础上添加一个层数计算，每遇到单层就将缓存起来的节点值结合反转，从而完成题目要求。
+解法 1 使用广度优先搜索进行求解，在 [Binary Tree Level Order Traversal 解题思路](https://gitee.com/bingzhong-project/leetcode/blob/master/algorithms/binary-tree-level-order-traversal/solutions.md) 的基础上添加一个层数计算，每遇到单层就将缓存起来的节点值结合反转，从而完成题目要求。
 
 ### 解法 2
 
