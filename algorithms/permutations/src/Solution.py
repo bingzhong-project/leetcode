@@ -5,13 +5,13 @@ class Solution:
         :rtype: List[List[int]]
         """
 
-        def dfs(nums, result, results):
-            if len(nums) == len(result):
-                results.append(result)
+        def dfs(nums, path, results):
+            if len(nums) == len(path):
+                results.append(path)
                 return
             for i in range(len(nums)):
-                if nums[i] not in result:
-                    dfs(nums, result + [nums[i]], results)
+                if nums[i] not in path:
+                    dfs(nums, path + [nums[i]], results)
 
         results = []
         dfs(nums, [], results)
