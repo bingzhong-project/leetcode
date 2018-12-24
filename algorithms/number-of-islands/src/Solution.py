@@ -26,5 +26,5 @@ class Solution:
                 if grid[i][j] == '1' and not visited[i][j]:
                     dfs(grid, visited, i, j)
                     res += 1
-        
+
         return res
