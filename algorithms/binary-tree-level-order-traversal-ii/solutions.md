@@ -8,4 +8,4 @@
 
 ## 解题思路
 
-解题思路和 [Binary Tree Level Order Traversal](https://gitee.com/bingzhong-project/leetcode/blob/master/algorithms/binary-tree-level-order-traversal/solutions.md) 一样，不过在返回时需要将数组进行反转。
+解题思路和 [Binary Tree Level Order Traversal](https://github.com/bingzhong-project/leetcode/blob/master/algorithms/binary-tree-level-order-traversal/solutions.md) 一样，不过在返回时需要将数组进行反转。
