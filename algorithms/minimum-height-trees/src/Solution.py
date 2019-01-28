@@ -8,33 +8,33 @@ class Solution:
 
         # 该解法 TLE
 
-        def calculate_height(graph, root):
+        def calculate_height(adj, root):
             height = {}
             height[root] = 0
 
-            visited = [False for _ in range(len(graph))]
+            visited = [False for _ in range(len(adj))]
             visited[root] = True
 
             queue = []
-            queue.append(graph[root][0])
+            queue.append(root)
             while len(queue) > 0:
                 node = queue.pop(0)
-                for i in range(1, len(graph[node])):
-                    child_node = graph[node][i]
+                for i in range(len(adj[node])):
+                    child_node = adj[node][i]
                     if not visited[child_node]:
                         visited[child_node] = True
                         height[child_node] = height[node] + 1
                         queue.append(child_node)
             return max(height.values())
 
-        graph = [[i] for i in range(n)]
+        adj = [[] for i in range(n)]
         for edge in edges:
-            graph[edge[0]].append(edge[1])
-            graph[edge[1]].append(edge[0])
+            adj[edge[0]].append(edge[1])
+            adj[edge[1]].append(edge[0])
         min_height = 2**31
         res = []
         for i in range(n):
-            height = calculate_height(graph, i)
+            height = calculate_height(adj, i)
             if height < min_height:
                 min_height = height
                 res = [i]
