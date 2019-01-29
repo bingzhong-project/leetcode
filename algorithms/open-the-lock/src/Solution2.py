@@ -24,28 +24,28 @@ class Solution:
                 res.append(''.join(down_seq_list))
             return res
 
+        deadends = set(deadends)
+
         if '0000' in deadends:
             return -1
         if target in deadends:
             return -1
 
-        distance = {}
-        distance['0000'] = 0
-
         queue = []
         queue.append('0000')
 
+        layer = 0
+
         while len(queue) > 0:
-            seq = queue.pop(0)
-            for next_seq in get_next_sequence(seq):
-                if next_seq in deadends:
-                    continue
-                if next_seq in distance:
-                    continue
-                distance[next_seq] = 0
-                distance[next_seq] = distance[seq] + 1
-                if next_seq == target:
-                    return distance[next_seq]
-                queue.append(next_seq)
+            layer += 1
+            for _ in range(len(queue)):
+                seq = queue.pop(0)
+                for next_seq in get_next_sequence(seq):
+                    if next_seq in deadends:
+                        continue
+                    if next_seq == target:
+                        return layer
+                    queue.append(next_seq)
+                    deadends.add(next_seq)
 
         return -1
