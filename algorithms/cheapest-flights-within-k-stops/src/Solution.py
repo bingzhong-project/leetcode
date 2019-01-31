@@ -15,7 +15,7 @@ class Solution:
         res = 2**31
         queue = []
         queue.append((src, 0))
-        layer = -1
+        layer = 0
 
         while len(queue) > 0:
             for _ in range(len(queue)):
@@ -27,7 +27,7 @@ class Solution:
                         continue
                     queue.append((next_city, next_price + price))
             layer += 1
-            if layer > K:
+            if layer > K + 1:
                 break
 
         return res if res != 2**31 else -1
