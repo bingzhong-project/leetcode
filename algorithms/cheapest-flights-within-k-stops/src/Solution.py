@@ -15,9 +15,12 @@ class Solution:
         res = 2**31
         queue = []
         queue.append((src, 0))
-        layer = 0
+        layer = -1
 
         while len(queue) > 0:
+            layer += 1
+            if layer > K + 1:
+                break
             for _ in range(len(queue)):
                 city, price = queue.pop(0)
                 if city == dst:
@@ -26,8 +29,5 @@ class Solution:
                     if next_price + price > res:
                         continue
                     queue.append((next_city, next_price + price))
-            layer += 1
-            if layer > K + 1:
-                break
 
         return res if res != 2**31 else -1
