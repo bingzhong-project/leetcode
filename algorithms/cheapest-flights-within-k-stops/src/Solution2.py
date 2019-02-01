@@ -16,7 +16,7 @@ class Solution:
             adj[flight[0]].append((flight[1], flight[2]))
 
         pq = [(0, -1, src)]
-        visited = {src}
+        visited = set()
 
         while pq:
             price, stops, city = heapq.heappop(pq)
