@@ -3,23 +3,21 @@ class MinStack:
         """
         initialize your data structure here.
         """
-        self.__array__ = []
-        self.__min__ = 2**31
+        self.array = []
+        self.min = 2**31
 
     def push(self, x: 'int') -> 'None':
-        self.__min__ = min(self.__min__, x)
-        self.__array__.append(x)
+        self.min = min(self.min, x)
+        self.array.append(x)
 
     def pop(self) -> 'None':
-        pop_val = self.__array__.pop()
-        if pop_val == self.__min__:
-            if len(self.__array__) == 0:
-                self.__min__ = 2**31
-            else:
-                self.__min__ = min(self.__array__)
+        pop_val = self.array.pop()
+        if pop_val == self.min:
+            self.min = 2**31 if len(self.array) == self.min else min(
+                self.array)
 
     def top(self) -> 'int':
-        return self.__array__[-1]
+        return self.array[-1]
 
     def getMin(self) -> 'int':
-        return self.__min__
+        return self.min
