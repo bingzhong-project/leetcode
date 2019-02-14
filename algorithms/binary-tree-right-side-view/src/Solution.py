@@ -18,14 +18,13 @@ class Solution:
         queue = list()
         queue.append(root)
         last_node = root
-        while len(queue) != 0:
+        while queue:
             node = queue.pop(0)
-            if node.left is not None:
+            if node.left:
                 queue.append(node.left)
-            if node.right is not None:
+            if node.right:
                 queue.append(node.right)
             if last_node == node:
                 result.append(last_node.val)
-                if len(queue) > 0:
-                    last_node = queue[len(queue) - 1]
+                last_node = queue[len(queue) - 1] if queue else None
         return result
