@@ -8,6 +8,7 @@
 
 ## 解题思路
 
-解题思路为利用深度优先搜索进行拓扑排序。思路和 [Course Schedule Solution](https://github.com/bingzhong-project/leetcode/blob/master/algorithms/course-schedule/solutions.md) 一致。
+解题思路为利用深度优先搜索或广度优先搜索进行拓扑排序。思路和 [Course Schedule Solution](https://github.com/bingzhong-project/leetcode/blob/master/algorithms/course-schedule/solutions.md) 一致。
 
-在拓扑排序中，越晚完成遍历的节点越靠近表头。基于这样的思路，当节点完成深度优先搜索后就插入到列表的表头（实际做法中可以加入到表尾，最后再反转数组）。
+在拓扑排序中，越晚完成遍历的节点越靠近表头。基于这样的思路，当节点完成深度优先搜索后就插入到列表的表头（实际做法中可以加入到表尾，最后再反转数组）。  
+而如果利用广度优先搜索进行拓扑排序，结点会按序加入到拓扑排序结果。
