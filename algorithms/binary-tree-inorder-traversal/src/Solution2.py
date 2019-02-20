@@ -15,11 +15,11 @@ class Solution:
         res = []
         stack = []
         node = root
-        while node is not None or len(stack) > 0:
-            while node is not None:
+        while node or stack:
+            while node:
                 stack.append(node)
                 node = node.left
-            if len(stack) > 0:
+            if stack:
                 node = stack.pop()
                 res.append(node.val)
                 node = node.right

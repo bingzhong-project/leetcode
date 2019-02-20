@@ -14,6 +14,16 @@ class Solution:
         last = None
 
         while node or stack:
-            pass
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack[-1]
+            if node.right is None or last == node.right:
+                stack.pop()
+                res.append(node.val)
+                last = node
+                node = None
+                continue
+            node = node.right
 
         return res

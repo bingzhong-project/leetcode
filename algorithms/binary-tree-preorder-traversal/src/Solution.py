@@ -15,13 +15,13 @@ class Solution:
         res = []
         if root is None:
             return res
-        stack = list()
+        stack = []
         stack.append(root)
-        while len(stack) > 0:
+        while stack:
             node = stack.pop()
             res.append(node.val)
-            if node.right is not None:
+            if node.right:
                 stack.append(node.right)
-            if node.left is not None:
+            if node.left:
                 stack.append(node.left)
         return res
