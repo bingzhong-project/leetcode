@@ -8,22 +8,15 @@ class Solution:
 
         def findNSum(nums, target, N, result, results):
             if N == 2:
-                left = 0
-                right = len(nums) - 1
-                while left < right:
-                    two_sum = nums[left] + nums[right]
-                    if target == two_sum:
-                        results.append(result + [nums[left], nums[right]])
-                        while left < right and nums[left] == nums[left + 1]:
-                            left += 1
-                        while left < right and nums[right] == nums[right - 1]:
-                            right -= 1
-                        left += 1
-                        right -= 1
-                    elif target < two_sum:
-                        right -= 1
-                    else:
-                        left += 1
+                cache = {}
+                visited = set()
+                for i in range(len(nums)):
+                    diff = target - nums[i]
+                    if diff in cache and diff not in visited and nums[i] not in visited:
+                        results.append(result + [nums[i], diff])
+                        visited.add(diff)
+                        visited.add(nums[i])
+                    cache[nums[i]] = i
             else:
                 for i in range((len(nums) - N + 1)):
                     if nums[i] * N > target or nums[-1] * N < target:
