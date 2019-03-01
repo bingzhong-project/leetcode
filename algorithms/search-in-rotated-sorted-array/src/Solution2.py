@@ -7,12 +7,12 @@ class Solution:
             if target == nums[mid]:
                 return mid
             if nums[mid] < nums[right]:
-                if nums[mid] < target and nums[right] >= target:
+                if nums[mid] < target <= nums[right]:
                     left = mid + 1
                 else:
                     right = mid - 1
             else:
-                if nums[mid] > target and nums[left] <= target:
+                if nums[mid] > target >= nums[left]:
                     right = mid - 1
                 else:
                     left = mid + 1
