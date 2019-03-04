@@ -12,7 +12,7 @@ class Solution:
             cur = int(s[i])
             pre = int(s[i - 1])
             num = pre * 10 + cur
-            if (pre == 0 and cur == 0 or (cur == 0 and num > 26)):
+            if ((pre == 0 and cur == 0) or (cur == 0 and num > 26)):
                 return 0
             elif (pre == 0 or num > 26):
                 dp[i + 1] = dp[i]
