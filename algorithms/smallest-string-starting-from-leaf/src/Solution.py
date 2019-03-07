@@ -8,4 +8,8 @@ class TreeNode:
 
 class Solution:
     def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
-        pass
+        def dfs(node):
+            if node is None:
+                return None
+            else:
+                pass
