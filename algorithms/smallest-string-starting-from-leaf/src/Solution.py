@@ -12,4 +12,16 @@ class Solution:
             if node is None:
                 return None
             else:
-                pass
+                char = chr(node.val + ord('a'))
+                ls = dfs(node.left)
+                rs = dfs(node.right)
+                if ls is None and rs is None:
+                    return char
+                elif ls and rs is None:
+                    return ls + char
+                elif ls is None and rs:
+                    return rs + char
+                else:
+                    return min(ls, rs) + char
+
+        return dfs(root)
