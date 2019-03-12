@@ -21,20 +21,15 @@ public class Codec {
             return null;
         }
         char[] dataCharArray = data.toCharArray();
-        int[] dataArray = new int[dataCharArray.length];
-        for (int i = 0; i < dataCharArray.length; i++) {
-            dataArray[i] = (int) dataCharArray[i];
-        }
-
-        return deserialize0(dataArray, 0, dataArray.length - 1);
+        return deserialize0(dataCharArray, 0, dataCharArray.length - 1);
     }
 
-    private TreeNode deserialize0(int[] data, int start, int end) {
+    private TreeNode deserialize0(char[] data, int start, int end) {
         if (start > end) {
             return null;
         }
 
-        TreeNode root = new TreeNode(data[start]);
+        TreeNode root = new TreeNode((int) data[start]);
         int g = end + 1;
         for (int i = start + 1; i <= end; i++) {
             if (root.val < data[i]) {
