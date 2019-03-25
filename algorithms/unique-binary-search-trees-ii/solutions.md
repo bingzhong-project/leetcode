@@ -8,4 +8,4 @@
 
 ## 解题思路
 
-解题思路参考：[Unique Binary Search Trees II Solution](https://leetcode.com/problems/unique-binary-search-trees-ii/solution/#)
+解题思路参考：[Unique Binary Search Trees II Solution](http://www.cnblogs.com/grandyang/p/4301096.htmlup)
