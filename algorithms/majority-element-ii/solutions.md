@@ -4,7 +4,7 @@
 
 ## 知识点
 
-数学，众数，Boyer-Moore 算法
+数学，Boyer-Moore 算法
 
 ## 解题思路
 
