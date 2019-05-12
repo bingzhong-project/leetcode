@@ -7,9 +7,9 @@ class TreeNode:
 
 
 class Solution:
-    def pathSum(self, root: 'TreeNode', s: 'int') -> 'int':
+    def pathSum(self, root: 'TreeNode', sum: 'int') -> 'int':
         def func(node, res):
-            if node.val == s:
+            if node.val == sum:
                 res[0] += 1
             node_sums = [node.val]
             left_sums = []
@@ -20,12 +20,12 @@ class Solution:
                 right_sums = func(node.right, res)
             for left_sum in left_sums:
                 temp = left_sum + node.val
-                if temp == s:
+                if temp == sum:
                     res[0] += 1
                 node_sums.append(temp)
             for right_sum in right_sums:
                 temp = right_sum + node.val
-                if temp == s:
+                if temp == sum:
                     res[0] += 1
                 node_sums.append(temp)
             return node_sums
