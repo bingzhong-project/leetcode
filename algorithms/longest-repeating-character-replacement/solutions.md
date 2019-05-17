@@ -1,1 +1,1 @@
-# [Longest Repeating Character Replacement](https://leetcode-cn.com/problems/longest-repeating-character-replacement/)
+# [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
