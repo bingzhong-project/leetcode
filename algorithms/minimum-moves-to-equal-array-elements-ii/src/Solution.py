@@ -7,7 +7,3 @@ class Solution:
         for num in nums:
             res += abs(target - num)
         return res
-
-
-if __name__ == "__main__":
-    print(Solution().minMoves2([1, 2, 3, 4, 5, 6]))
