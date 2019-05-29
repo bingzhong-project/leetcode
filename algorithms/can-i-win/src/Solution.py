@@ -8,8 +8,8 @@ class Solution:
             for i in range(1, length + 1):
                 cur = 1 << i
                 if cur & used == 0:
-                    if not dfs(length, target - i, used | cur,
-                               cache) or target - i <= 0:
+                    if target - i <= 0 or not dfs(length, target - i,
+                                                  used | cur, cache):
                         ans = True
                         break
 
