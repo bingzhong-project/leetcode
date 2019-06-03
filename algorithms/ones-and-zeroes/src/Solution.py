@@ -1,36 +1,26 @@
-import collections
-
-
 class Solution:
     def findMaxForm(self, strs: 'List[str]', m: 'int', n: 'int') -> 'int':
         """TLE
         """
 
-        def func(counter, m, n, cache):
-            if (m, n) in cache:
-                return cache[(m, n)]
+        def func(strs, index, m, n, cache):
+            if (index, m, n) in cache:
+                return cache[(index, m, n)]
             res = 0
-            for i in range(len(counter)):
+            for i in range(index, len(strs)):
                 ans = 0
-                m -= counter[i][0]
-                n -= counter[i][1]
+                zeros = strs[i].count('0')
+                ones = len(strs[i]) - zeros
+                m -= zeros
+                n -= ones
                 if m >= 0 and n >= 0:
-                    ans = func(counter[i + 1:], m, n, cache) + 1
-                m += counter[i][0]
-                n += counter[i][1]
+                    ans = func(strs, i + 1, m, n, cache) + 1
+                m += zeros
+                n += ones
                 res = max(res, ans)
-            cache[(m, n)] = res
+            cache[(index, m, n)] = res
             return res
 
-        counter = [collections.Counter() for _ in range(len(strs))]
-        strs.sort(key=lambda s: len(s))
-        for i in range(len(strs)):
-            for s in strs[i]:
-                if s == '0':
-                    counter[i][0] += 1
-                else:
-                    counter[i][1] += 1
-        cache = collections.Counter()
-        res = func(counter, m, n, cache)
+        cache = {}
 
-        return res
+        return func(strs, 0, m, n, cache)
