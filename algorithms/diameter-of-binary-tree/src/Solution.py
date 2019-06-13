@@ -7,5 +7,5 @@ class TreeNode:
 
 
 class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+    def diameterOfBinaryTree(self, root: 'TreeNode') -> 'int':
         pass
