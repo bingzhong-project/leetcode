@@ -13,7 +13,3 @@ class Solution:
             return ways
 
         return func(amount, coins, len(coins) - 1, {})
-
-
-if __name__ == "__main__":
-    print(Solution().change(5, [1, 2, 5]))
