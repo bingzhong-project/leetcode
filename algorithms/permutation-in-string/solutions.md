@@ -1,1 +1,1 @@
-# [Permutation in String](https://leetcode-cn.com/problems/permutation-in-string/)
+# [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
