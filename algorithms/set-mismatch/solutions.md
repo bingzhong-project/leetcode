@@ -1,5 +1,5 @@
 # [Set Mismatch](https://leetcode.com/problems/set-mismatch/)
 
-## 解题思路
+## 知识点
 
 集合
