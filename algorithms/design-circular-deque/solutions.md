@@ -1,4 +1,4 @@
-# [Design Circular Queue](https://leetcode.com/problems/design-circular-queue/)
+# [Design Circular Deque](https://leetcode.com/problems/design-circular-deque/)
 
 ## 知识点
 
