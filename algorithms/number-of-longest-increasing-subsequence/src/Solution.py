@@ -1,7 +1,5 @@
 class Solution:
     def findNumberOfLIS(self, nums: 'List[int]') -> 'int':
-        if len(nums) == 0:
-            return 0
         length = [1 for _ in range(len(nums))]
         count = [1 for _ in range(len(nums))]
         max_count = 0
