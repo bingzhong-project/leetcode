@@ -1,23 +1,16 @@
 class Solution:
     def numSubarrayBoundedMax(self, A: list, L: int, R: int) -> int:
+        """TLE
+        """
         res = 0
         for i in range(len(A)):
-            if A[i] >= L and A[i] <= R:
-                left = i
-                right = i
-                while left > 0 and A[i] >= A[left]:
-                    left -= 1
-                while right < len(A) - 1 and A[i] <= A[right]:
-                    right += 1
-                if left == right:
+            if A[i] > R:
+                continue
+            cur_max = 2**-31
+            for j in range(i, len(A)):
+                cur_max = max(cur_max, A[j])
+                if cur_max > R:
+                    continue
+                if cur_max >= L:
                     res += 1
-                elif left < i and right > i:
-                    left_num = (i - left + 1)
-                    right_num = (right - i + 1)
-                    res += left_num * right_num
-                elif left == i and right > i:
-                    res += right - i + 1
-                elif left < i and right == i:
-                    res += i - left + 1
-
         return res
