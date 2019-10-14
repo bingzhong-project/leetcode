@@ -11,3 +11,5 @@ class Solution:
             if diff in cache:
                 return sorted([i, cache[diff]])
             cache[nums[i]] = i
+
+        return []
