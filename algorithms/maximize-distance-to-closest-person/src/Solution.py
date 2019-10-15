@@ -5,10 +5,7 @@ class Solution:
         for i in range(len(seats)):
             if seats[i] == 1:
                 pos.append(i)
-        if len(pos) == 1:
-            res = max(pos[0], len(seats) - pos[0] - 1)
-        else:
-            for i in range(len(pos) - 1):
-                res = max(res, (pos[i + 1] - pos[i]) // 2)
-            res = max(res, pos[0], len(seats) - pos[-1] - 1)
+        for i in range(1, len(pos)):
+            res = max(res, (pos[i] - pos[i - 1]) // 2)
+        res = max(res, pos[0], len(seats) - pos[-1] - 1)
         return res
