@@ -12,8 +12,8 @@ class Solution:
             cur = left_sum + right_sum + 1
 
             cur = cur if factor1 == factor2 else cur * 2
-            memo[num] = cur % (10**9 + 7)
-            return memo[num]
+            memo[num] = cur
+            return cur
 
         factor_map = {}
         for i in range(len(A)):
@@ -22,7 +22,8 @@ class Solution:
 
         res = 0
         memo = {}
-        for num in sorted(A):
-            res += func(num, factor_map, memo)
+        for num in factor_map.keys():
+            if num in set(A):
+                res += func(num, factor_map, memo)
 
         return res + len(A)
