@@ -8,8 +8,6 @@ class Solution:
         for num in A:
             A_new_sum = A_sum - num
             B_new_sum = B_sum + num
-            if A_new_sum > B_new_sum:
-                continue
             diff = B_new_sum - A_new_sum
             if diff < 1 or diff % 2 != 0:
                 continue
