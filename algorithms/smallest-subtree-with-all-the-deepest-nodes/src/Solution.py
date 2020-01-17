@@ -9,4 +9,3 @@ class TreeNode:
 class Solution:
     def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
         pass
-    
